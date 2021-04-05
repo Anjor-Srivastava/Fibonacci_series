@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Febonacci number calculator</title>
+<link rel="icon" href="https://image.flaticon.com/icons/png/512/2397/2397416.png">
+<style>
+body{
+text-align: center;
+font-family: sans-serif;
+background-color: #00ff00;
+}
+#error{
+background-color: red;
+color: white;
+display: none;
+}
+input, button {
+margin: 10px;
+height: 30px;
+font-size: 25px;
+}
+var {
+font-family: cursive;
+font-size: 40px;
+}
+</style>
+</head>
+
+<body>
+<h1>Fibonacci number calculator</h1>
+<div><input type="number" id="num"></input><var>terms</var><button id="Calc">Calculate</button></div>
+<h2 id="result"></h2>
+<script>
+var r = [];
+var f;
+var s;
+document.getElementById("Calc").onclick= function () {
+r = [0,1];
+f = 0;
+s = 1;
+var nextf;
+for (var i = 1; i < document.getElementById("num").value - Number(1); i++) {
+nextf = Number(f) + Number(s);
+r.push(nextf);
+f = s;
+s = nextf;
+}
+document.getElementById("result").innerHTML= r;
+}
+</script>
+</body>
+
+</html>
